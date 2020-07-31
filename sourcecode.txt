@@ -1,0 +1,14 @@
+#This query is to create a datbase and a table in it
+creat database employee_db;
+use employee_db;
+create table employee(serial_number int(2),First_Name varchar(15),Last_name varchar(15),Gender varchar(6),Country varchar(15),Age int(2),Date date,Id int(10));
+desc employee;
+
+#The next query imports data from the excel file path and store it in database
+#It is necessary for the excel file to exhist inside C Programdata MySQL server Uploads folder
+LOAD DATA LOCAL INFILE "C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\example.csv" INTO TABLE employee
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+IGNORE 1 LINES
+(serial_number,First_Name,Last_name,Gender,Country,Age,@datevar,Id)
+set Date=STR_TO_DATE(@datevar,'%d/%m/%Y');
