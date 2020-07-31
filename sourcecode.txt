@@ -8,7 +8,7 @@ desc employee;
 SET GLOBAL local_infile =true;
 
 #The next query imports data from the excel file path and store it in database
-#It is necessary for the excel file to exhist inside C Programdata MySQL server Uploads folder
+#It is necessary for the excel file to exist inside C Programdata MySQL server Uploads folder
 LOAD DATA LOCAL INFILE "C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\example.csv" INTO TABLE employee
 FIELDS TERMINATED BY ','
 LINES TERMINATED BY '\n'
